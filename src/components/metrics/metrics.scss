@@ -1,0 +1,20 @@
+.metrics__wrap {
+  border: 2px solid rgba(27,31,35,.15);
+  border-radius: 10px;
+  display: inline-flex;
+}
+.metric__item {
+  display: flex;
+  padding: 6px 12px;
+  border-right: 2px solid rgba(27, 31, 35, 0.15);
+
+&:nth-child(odd){
+  background: #FAFBFC;
+}
+&:first-child{
+  border-radius: 10px 0 0 10px;
+}
+&:last-child{
+  border-right: none;
+}
+}

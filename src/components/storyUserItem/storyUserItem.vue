@@ -10,34 +10,10 @@
 <script>
 export default {
   props: {
-    avatar: {
-      type: String,
-      required: true
-    },
-    username: {
-      type: String,
-      required: true
-    }
+    avatar: String,
+    username: String
   }
 }
 </script>
 
-<style lang="scss" scoped>
-.img {
-  border-radius: 50px;
-  border: 2px solid #A6328D;
-}
-
-.avatar {
-  width: 80px;
-  margin-bottom: 16px;
-}
-
-.username {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 10px;
-  color: #000000;
-}
-</style>
+<style lang="scss" scoped src="./storyUserItem.scss"></style>

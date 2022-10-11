@@ -11,14 +11,4 @@
     </div>
 </template>
 
-<style lang="scss" scoped>
-    .c-topline {
-        padding: 48px 0 37px 0;
-        margin-bottom: 32px;
-    }
-.headline {
-    display: flex;
-    margin-bottom: 50px;
-    justify-content: space-between;
-}
-</style>
+<style lang="scss" scoped src="./topline.scss"></style>
