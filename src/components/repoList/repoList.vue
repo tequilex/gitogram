@@ -7,16 +7,7 @@
       <post-content
       v-bind="getFeedData (item)"
       />
-    <div class="reviews">
-    <toggler @onToggle="toggle" />
-    <div class="comments" v-if="shown">
-      <ul class="comments-list">
-        <li class="comments-item" v-for="n in 6" :key="n">
-          <comment text="Enable performance measuring in production, at the user's request" username="John Doe" />
-        </li>
-      </ul>
-    </div>
-  </div>
+      <reviews />
   <div class="date">15 may</div>
   </div>
 </div>
@@ -24,23 +15,20 @@
 </template>
 
 <script>
-import { toggler } from '../../components/toggler'
-import { comment } from '../../components/comment'
 import { user } from '../../components/user'
+import { reviews } from '../../components/reviews'
 import { postContent } from '../../components/postContent'
 
 import * as api from './../../api'
 
 export default {
   components: {
-    toggler,
-    comment,
+    reviews,
     user,
     postContent
   },
   data () {
     return {
-      shown: false,
       items: {}
     }
   },
@@ -54,14 +42,11 @@ export default {
         forks: item.forks,
         avatar: item.owner.avatar_url
       }
-    },
-    toggle (isOpened) {
-      this.shown = isOpened
     }
   },
   async created () {
     try {
-      const { data } = await api.trandings.getTrandings()
+      const { data } = await api.trendings.getTrendings()
 
       this.items = data.items
     } catch (error) {

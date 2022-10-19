@@ -1,15 +1,19 @@
 <template>
-  <div class="c-progress" :class="{ active }">
+  <div class="c-progress" :class="{active: startProgress}">
     <div ref="indicator" class="indicator"></div>
   </div>
 </template>
 
 <script>
 export default {
+  name: 'Xprogress',
   data () {
     return {
-      active: false
+      startProgress: false
     }
+  },
+  props: {
+    active: Boolean
   },
   emits: ['onFinish'],
   methods: {
@@ -19,7 +23,7 @@ export default {
   },
   mounted () {
     setTimeout(() => {
-      this.active = true
+      this.startProgress = this.active
     }, 0)
 
     this.$refs.indicator.addEventListener('transitionend', this.emitOnFinish)
@@ -28,6 +32,12 @@ export default {
     this.$refs.indicator.removeEventListener(
       'transitionend',
       this.emitOnFinish)
+  },
+  watch: {
+    active (curVal, prevVal) {
+      console.log(curVal, '|', prevVal)
+      this.startProgress = !this.startProgress
+    }
   }
 }
 </script>

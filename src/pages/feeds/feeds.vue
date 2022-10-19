@@ -7,10 +7,10 @@
             </template>
             <template #content>
                 <ul class="stories">
-                    <li class="stories-item" v-for="item in items" :key="item.id">
+                    <li class="stories-item" v-for="item in trendings" :key="item.id">
                         <story-user-item
                         v-bind="getFeedData(item)"
-                        @onPress="handlePress(story.id)"/>
+                        @onPress="$router.push({name: 'stories', params: {initialSlide: item.id } })"/>
                     </li>
                 </ul>
             </template>
@@ -26,6 +26,8 @@ import { repoList } from '../../components/repoList'
 import { navigation } from '../../components/navigation'
 import { logo } from '../../components/logo'
 
+import { mapState, mapActions } from 'vuex'
+
 import * as api from '../../api'
 
 export default {
@@ -37,12 +39,20 @@ export default {
     navigation,
     logo
   },
+  computed: {
+    ...mapState({
+      trendings: (state) => state.trendings.data
+    })
+  },
   data () {
     return {
       items: {}
     }
   },
   methods: {
+    ...mapActions({
+      fetchTrendings: 'trendings/fetchTrendings'
+    }),
     getFeedData (item) {
       return {
         avatar: item.owner.avatar_url,
@@ -55,12 +65,15 @@ export default {
   },
   async created () {
     try {
-      const { data } = await api.trandings.getTrandings()
-
+      const { data } = await api.trendings.getTrendings()
       this.items = data.items
     } catch (error) {
       console.log(error)
     }
+    api.trendings.getTrendings()
+  },
+  mounted () {
+    this.fetchTrendings()
   }
 }
 </script>
