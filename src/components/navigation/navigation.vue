@@ -1,27 +1,35 @@
 <template>
   <div class="navigation">
-    <div class="home-img">
+    <button class="home-img">
       <icon name="home" />
-    </div>
-    <div class="profile-img">
+    </button>
+    <button class="profile-img">
       <img
         src="https://shapka-youtube.ru/wp-content/uploads/2020/07/letter-c.jpg"
         class="img-avatar"
         alt="user photo"
       />
-    </div>
-    <div class="exit-img">
+    </button>
+    <button class="exit-img" @click="logout">
       <icon name="exit" />
-    </div>
+    </button>
   </div>
 </template>
 
 <script>
 import { icon } from '../../icons'
+
+import { mapActions } from 'vuex'
+
 export default {
   name: 'navigation',
   components: {
     icon
+  },
+  methods: {
+    ...mapActions({
+      logout: 'auth/logout'
+    })
   }
 }
 </script>
