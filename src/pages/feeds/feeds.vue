@@ -41,7 +41,8 @@ export default {
   },
   computed: {
     ...mapState({
-      trendings: (state) => state.trendings.data
+      trendings: (state) => state.trendings.data,
+      starred: (state) => state.starred.data
     })
   },
   data () {
@@ -51,7 +52,8 @@ export default {
   },
   methods: {
     ...mapActions({
-      fetchTrendings: 'trendings/fetchTrendings'
+      fetchTrendings: 'trendings/fetchTrendings',
+      fetchStarred: 'starred/fetchStarred'
     }),
     getFeedData (item) {
       return {
@@ -74,6 +76,7 @@ export default {
   },
   mounted () {
     this.fetchTrendings()
+    this.fetchStarred({ limit: 10 })
   }
 }
 </script>

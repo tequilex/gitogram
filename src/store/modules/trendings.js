@@ -31,7 +31,7 @@ export default {
 
       try {
         const { data } = await api.trendings.getTrendings()
-        commit('SET_TRENDINGS', data.items)
+        commit('SET_TRENDINGS', data.items, rootState.starred.data)
         // console.log(data)
       } catch (e) {
         console.log(e)

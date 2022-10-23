@@ -3,7 +3,7 @@
     <div class="stories-container">
       <div class="header">
         <div class="progress">
-          <xProgress :active="active" @onFinish="$emit('onProgressFinish')"/>
+          <xProgress :active="actie" @onFinish="$emit('onProgressFinish')"/>
         </div>
         <div class="user">
           <user :avatar="data.avatar" :username="data.username" />
@@ -23,7 +23,7 @@
         </div>
       </div>
       <div class="footer">
-        <x-button>Following</x-button>
+        <x-button @click="$emit('followTheRepo')">Following</x-button>
       </div>
       <template v-if="active">
         <button v-if="btnsShown.includes('next')" class="btn btn-next" @click="$emit('next')">
