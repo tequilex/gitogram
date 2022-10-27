@@ -28,7 +28,6 @@
 import { logo } from '../../components/logo'
 import { icon } from '../../icons'
 import { xButton } from '../../components/button'
-import env from '../../../env'
 
 import { mapActions } from 'vuex'
 
@@ -52,7 +51,6 @@ export default {
       localStorage.setItem('token', token)
       // console.log(token)
       this.$router.replace({ name: 'feeds' })
-      window.location = env.redirect_url
     }
   }
 
