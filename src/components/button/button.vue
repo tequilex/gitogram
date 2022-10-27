@@ -1,7 +1,8 @@
 <template>
   <button
-    :class="['c-button', `theme-green`, { 'hover-text': withHoverText }]"
-    :data-hover-text="hoverText"
+    :class="[
+    'c-button', `theme-${theme}`
+    ]"
   >
     <span class="btn-text">
       <slot></slot>
@@ -13,13 +14,8 @@
 export default {
   name: 'Button',
   props: {
-    hoverText: {
+    theme: {
       type: String
-    }
-  },
-  computed: {
-    withHoverText () {
-      return this.hoverText?.length
     }
   }
 }

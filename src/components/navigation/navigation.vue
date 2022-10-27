@@ -5,9 +5,9 @@
     </button>
     <button class="profile-img">
       <img
-        src="https://shapka-youtube.ru/wp-content/uploads/2020/07/letter-c.jpg"
+        :src="src"
         class="img-avatar"
-        alt="user photo"
+        :alt="`${username} avatar`"
       />
     </button>
     <button class="exit-img" @click="logout">
@@ -23,6 +23,14 @@ import { mapActions } from 'vuex'
 
 export default {
   name: 'navigation',
+  props: {
+    src: {
+      type: String
+    },
+    username: {
+      type: String
+    }
+  },
   components: {
     icon
   },

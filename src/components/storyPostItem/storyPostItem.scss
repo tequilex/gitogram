@@ -46,6 +46,8 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  color: #31AE54;
+  
 }
 
 .content-img {
@@ -98,4 +100,10 @@
       transform: rotate(-180deg);
     }
   }
+}
+
+.loader-btn {
+  width: 20px;
+  height: 20px;
+  color: #fff;
 }

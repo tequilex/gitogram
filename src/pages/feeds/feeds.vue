@@ -1,9 +1,10 @@
 <template>
+<!-- <pre>{{ user }}</pre> -->
     <div class="topline">
         <topline>
             <template #headline>
               <logo />
-                <navigation />
+                <navigation :src="user.avatar_url" :username="user.login" />
             </template>
             <template #content>
                 <ul class="stories">
@@ -42,7 +43,7 @@ export default {
   computed: {
     ...mapState({
       trendings: (state) => state.trendings.data,
-      starred: (state) => state.starred.data
+      user: (state) => state.user.data
     })
   },
   data () {
@@ -53,7 +54,7 @@ export default {
   methods: {
     ...mapActions({
       fetchTrendings: 'trendings/fetchTrendings',
-      fetchStarred: 'starred/fetchStarred'
+      getUser: 'user/getUserData'
     }),
     getFeedData (item) {
       return {
@@ -76,7 +77,7 @@ export default {
   },
   mounted () {
     this.fetchTrendings()
-    this.fetchStarred({ limit: 10 })
+    this.getUser()
   }
 }
 </script>

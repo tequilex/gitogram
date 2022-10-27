@@ -9,17 +9,19 @@
           <li
           class="stories-item"
           ref="item"
-          v-for="({id}, ndx ) in trendings"
-          :key="id"
+          v-for="(trending, ndx ) in trendings"
+          :key="trending.id"
           >
             <story-post-item
+            :data="getStoryData(trending)"
             :active="slideNdx === ndx"
             :loading="slideNdx === ndx && loading"
             :btnsShown="activeBtns"
             @next="handleSlide(ndx + 1)"
             @prev="handleSlide(ndx - 1)"
             @onProgressFinish="handleSlide(ndx + 1)"
-            @followTheRepo="starRepo(id)"
+            @followTheRepo="starRepo(trending.id)"
+            @unFollowTheRepo="unStarRepo(trending.id)"
             />
           </li>
         </ul>
@@ -66,7 +68,8 @@ export default {
     ...mapActions({
       fetchTrendings: 'trendings/fetchTrendings',
       fetchReadme: 'trendings/fetchReadme',
-      starRepo: 'starred/starRepo'
+      starRepo: 'trendings/starRepo',
+      unStarRepo: 'trendings/unStarRepo'
     }),
     async fetchReadmeForActiveSlide () {
       const { id, owner, name } = this.trendings[this.slideNdx]
@@ -77,7 +80,9 @@ export default {
         id: obj.id,
         avatar: obj.owner?.avatar_url,
         username: obj.owner?.login,
-        content: obj.readme
+        content: obj.readme,
+        following: obj.following,
+        loading: obj.loading
       }
     },
     moveSlider (slideNdx) {

@@ -3,27 +3,27 @@
   height: 44px;
   background: #31AE54;
   border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  &.hover-text:hover {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 22px;
-    color: #FFFFFF;
   &:hover {
-    .btn-text {
-      display: none;
-        }
-    }
-
-  &:after {
-    content: attr(data-hover-text);
-      }
+    transition: .4s;
   }
-
-  &.theme-green:hover {
+  &.theme-grey {
     background: #9E9E9E;
+
+    &:hover {
+      background: #7c7c7c;
+    }
   }
+    &.theme-green {
+      background: #31AE54;
+
+      &:hover {
+        background: #208C32;
+      }
+    }
 }
 
 .btn-text {

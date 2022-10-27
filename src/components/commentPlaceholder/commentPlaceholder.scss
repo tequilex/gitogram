@@ -1,0 +1,23 @@
+.content {
+
+  &:after, &:before, .item {
+    content: '';
+    display: block;
+    background: linear-gradient(270deg, #FFFFFF -50%, rgba(255, 255, 255, 0) 100%), #EAEAEA;;;
+    height: 14px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+
+  &:before {
+    width: 40%;
+  }
+
+  .item {
+    width: 30%;
+  }
+
+  &:after {
+    width: 20%;
+  }
+}
