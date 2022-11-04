@@ -1,0 +1,67 @@
+.c-user {
+  display: flex;
+  align-items: center;
+}
+.username {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  margin-bottom: 6px;
+}
+
+.stats {
+  display: flex;
+}
+
+.stats-count {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  margin-right: 4px;
+  color: #404040;
+}
+
+.stats-title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 15px;
+  margin-right: 10px;
+}
+
+.name {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #9E9E9E;
+}
+
+.watch {
+  color: #31ae54;
+  text-decoration: none;
+
+  .stats-title {
+    text-decoration: underline;
+  }
+  &:hover {
+    .stats-title {
+      text-decoration: none;
+    }
+  }
+}
+
+.router-link-exact-active {
+  pointer-events: none;
+
+  .stats-title {
+    text-decoration: none;
+    color: #404040;
+  }
+}

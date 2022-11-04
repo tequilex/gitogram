@@ -6,7 +6,7 @@
           <xProgress :active="active" @onFinish="$emit('onProgressFinish')"/>
         </div>
         <div class="user">
-          <user :avatar="data.avatar" :username="data.username" />
+          <user :avatar="data.avatar" :username="data.username" size="small" />
         </div>
       </div>
       <div class="content">

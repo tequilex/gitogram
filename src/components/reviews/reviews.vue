@@ -1,6 +1,8 @@
 <template>
   <div class="reviews">
+    <div class="toggler">
     <toggler @onToggle="toggle" />
+    </div>
       <comment-placeholder v-if="loading" />
     <div class="comments" v-if="issues?.length && shown">
       <ul class="comments-list">

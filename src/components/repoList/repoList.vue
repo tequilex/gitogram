@@ -2,6 +2,7 @@
 <div class="repository-list">
   <div class="repository-list__container" v-for="item in starred" :key="item.id">
     <user
+    size="small"
     v-bind="getFeedData(item)"
     />
       <post-content

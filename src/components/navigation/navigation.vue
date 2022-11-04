@@ -1,9 +1,9 @@
 <template>
   <div class="navigation">
-    <button class="home-img">
+    <button class="home-img" @click="$router.push({ name: 'feeds' })">
       <icon name="home" />
     </button>
-    <button class="profile-img">
+    <button class="profile-img" @click="$router.push({ name: 'user' })">
       <img
         :src="src"
         class="img-avatar"
