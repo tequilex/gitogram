@@ -1,11 +1,17 @@
 .c-topline {
-    padding: 40px 0 37px 0;
+  padding: 40px 0 37px 0;
 }
 .headline {
-display: flex;
-justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .content {
-    margin-top: 44px
+  margin-top: 44px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  margin: 44px auto 0 auto;
+  max-width: 1200px;
 }

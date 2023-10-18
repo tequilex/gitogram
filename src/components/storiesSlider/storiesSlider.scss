@@ -1,3 +1,5 @@
+@import '../../vars.scss';
+
 .stories-container {
   height: 667px;
   position: relative;
@@ -11,5 +13,13 @@
   margin-left: -188px;
   transition: .4s;
   transform: translateX(0);
+
+  @include tablets {
+    top: -40px;
+  }
 }
 
+.stories-item {
+  height: 664px;
+  width: 375px;
+}

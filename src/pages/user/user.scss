@@ -1,23 +1,37 @@
+@import '../../vars.scss';
+
 .topline {
   border-bottom: 1px solid #D3D3D3;
   background: #FAFAFA;
+  padding: 0 10px;
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
+  padding: 0 10px;
 }
 
-.wrapper {
+.wrapper-user {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
-  flex: 1;
+  // flex: 1;
+
+  @include tablets {
+    flex-direction: column;
+  }
 }
 
 .user {
-  flex: 1;
+  // flex: 1;
   color: #262626;
   border-right: 1px solid #D3D3D3;
   padding: 40px 30px 0 0;
+
+  @include tablets {
+    border-right: none;
+  }
 }
 
 .title {
@@ -31,5 +45,9 @@
 
 .content {
   flex: 2;
-  padding: 40px 0 0 74px
+  padding: 40px 0 0 74px;
+
+  @include tablets {
+    padding: 40px 0 0 0 ;
+  }
 }

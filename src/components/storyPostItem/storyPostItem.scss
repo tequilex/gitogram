@@ -1,8 +1,10 @@
+@import '../../vars.scss';
+
 .c-story-post-item {
   border-radius: 8px;
-  height: 664px;
+  height: 100%;
   position: relative;
-  width: 375px;
+  width: 100%;
   transform: scale(.8);
   transition: .4s;
   background: #fff;
@@ -19,6 +21,8 @@
 .stories-container {
   
   border-radius: 8px;
+  width: 100%;
+  height: 100%;
 }
 
 .header {
@@ -91,6 +95,10 @@
 
   &-prev {
     left: -58px;
+
+    @include tablets {
+      left: -17px;
+    }
   }
 
   &-next {
@@ -99,6 +107,11 @@
     .icon {
       transform: rotate(-180deg);
     }
+
+    @include tablets {
+      right: -17px;
+    }
+
   }
 }
 

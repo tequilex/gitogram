@@ -21,8 +21,8 @@
   }
   
   img {
-    display: block;
     max-width: 100%;
+	  height: auto;
   }
   
   p {
@@ -50,13 +50,32 @@
   
   .wrapper {
     position: relative;
-    overflow: hidden;
-    min-height: 100%;
+    // overflow: hidden;
+    // min-height: 100%;
+    // min-height: 200%;
+    min-height: 100vh;
+    // padding: 0 10px;
+
+    margin: 0 auto;
+
   }
   
-  .x-container {
-    width: 1200px;
-    margin: 0 auto;
+  // .x-container {
+  //   width: 1200px;
+  //   margin: 0 auto;
+  // }
+
+ *::-webkit-scrollbar {
+    width: 6px;  
+    height: 6px;            
+  }
+  *::-webkit-scrollbar-track {
+    background: rgb(253, 253, 253);       
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: green;   
+    border-radius: 20px;      
+  
   }
 
-  
+

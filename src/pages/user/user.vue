@@ -8,7 +8,7 @@
   </topline>
 </div>
 <div class="x-container container">
-  <div class="wrapper">
+  <div class="wrapper-user">
     <div class="user">
       <div class="title">My profile</div>
       <my-profile

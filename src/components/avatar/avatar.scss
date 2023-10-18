@@ -1,6 +1,15 @@
+@import '../../vars.scss';
+
 .img-avatar {
-  width: 90px;
-  height: 90px;
+  width: 100%;
+  height: 100%;
+  max-width: 104px;
+  min-width: 100px;
   border-radius: 50px;
   margin-right: 14px;
+
+  @include tablets {
+    max-width: 64px;
+    min-width: 60px;
+  }
 }
