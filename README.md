@@ -1,34 +1,31 @@
-# gitogram
+# Проект Gitogram
 
-## Project setup
-```
-yarn install
-```
+### Клиент приложения для отслеживания и взаимодействия с репозиториями GitHub.
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+### Описание:
 
-### Compiles and minifies for production
-```
-yarn build
-```
+ - Создавалось при помощи GitHub-Api.
+ - Необходима учетная запись GitHub
+ - Авторизация при помощи OAuth
+ - Хранение данных осуществляется средствами Vuex
+ - За маршрутизацию по страницам сайта отвечает vue-router
+ - В шапке на главной странице располагаются сторис из файлов Readme репозиториев, находящихся в тренде за последнюю неделю
+ - При нажатии на стори появляются слайды с Readme с возможностью поставить STAR этому репозиторию
+ - Понравившиеся репозитории отображаются на главной странице, а также на странице пользователя в разделе Following
+ - Также в разделе пользователя находится информация о своих репозиториях.
 
-### Run your unit tests
-```
-yarn test:unit
-```
+### Стек:
+- JavaScript
+- Vue.js
+- SCSS
+- Vue-router
+- Vuex
+- StoryBook
+- Axios
 
-### Run your end-to-end tests
-```
-yarn test:e2e
-```
+### Настройка и запуск:
 
-### Lints and fixes files
-```
-yarn lint
-```
+ - Установите модули локально
+`npm install` | `yarn install`
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+ - Запустите сборку проекта. `npm start` | `yarn start`
